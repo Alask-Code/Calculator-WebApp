@@ -20,7 +20,11 @@ export function AdCard({ onClose }: AdCardProps) {
           <X size={15} />
         </button>
       </div>
-      <iframe className="ad-overlay-frame" src="https://uplcm.com/4/12137237" />
+      <iframe
+        className="ad-overlay-frame"
+        src="https://uplcm.com/4/12137237"
+        title="Conteúdo do anúncio"
+      />
       <p className="ad-overlay-footnote">Prévia ilustrativa · sem conteúdo externo</p>
     </aside>
   )
