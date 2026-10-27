@@ -79,13 +79,7 @@ export function Shell() {
         <span>Feito para deixar as contas mais simples.</span>
         <span>© 2026 Calcula · Resultados são estimativas</span>
       </footer>
-      {showAd && (
-        <AdCard
-          title="Mais clareza para seus planos"
-          description="Uma demonstração de anúncio contextual no portal Calcula."
-          onClose={() => setShowAd(false)}
-        />
-      )}
+      {showAd && <AdCard onClose={() => setShowAd(false)} />}
     </div>
   )
 }
