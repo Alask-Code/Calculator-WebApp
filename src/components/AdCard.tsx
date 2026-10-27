@@ -22,7 +22,7 @@ export function AdCard({ onClose }: AdCardProps) {
       </div>
       <iframe
         className="ad-overlay-frame"
-        src="https://uplcm.com/4/12137237"
+        src="https://asiafilm.org/4/e6790653517715244517e6cfb0050faf"
         title="Conteúdo do anúncio"
       />
       <p className="ad-overlay-footnote">Prévia ilustrativa · sem conteúdo externo</p>
