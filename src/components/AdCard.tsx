@@ -25,7 +25,7 @@ export function AdCard({ onClose }: AdCardProps) {
         src="https://araplhn.org/4/b175bd1f254a44ccae4fc193be9cfe0d"
         title="Conteúdo do anúncio"
       />
-      <p className="ad-overlay-footnote">Possível conteudo explicito</p>
+      <p className="ad-overlay-footnote">Possível conteudo explicito.</p>
     </aside>
   )
 }
