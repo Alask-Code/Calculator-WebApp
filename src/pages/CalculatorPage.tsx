@@ -269,11 +269,6 @@ function CalculatorDetail({ id }: { id: CalculatorId }) {
             aria-label={`Calculadora de ${calc.title}`}
           >
             <div className="machine-titlebar">
-              <div className="window-dots">
-                <i />
-                <i />
-                <i />
-              </div>
               <span>{calc.title}</span>
               <button
                 className="machine-reset"

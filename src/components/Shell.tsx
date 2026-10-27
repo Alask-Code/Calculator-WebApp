@@ -1,24 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
-import { Calculator, Menu, Search, X } from 'lucide-react'
+import { Calculator, Menu, Moon, Search, Sun, X } from 'lucide-react'
+import { usePreferences } from '../store/usePreferences'
+import { AdCard } from './AdCard'
 export function Shell() {
   const [open, setOpen] = useState(false)
+  const [showAd, setShowAd] = useState(true)
+  const theme = usePreferences((state) => state.theme)
+  const toggleTheme = usePreferences((state) => state.toggleTheme)
+  useEffect(() => {
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark' ? '#171b23' : '#f4f5f7')
+  }, [theme])
+  useEffect(() => {
+    if (showAd) {
+      return
+    }
+    const timer = window.setTimeout(() => setShowAd(true), 60_000)
+    return () => window.clearTimeout(timer)
+  }, [showAd])
   return (
-    <div className="desktop">
-      <div className="window-bar">
-        <div className="window-dots">
-          <i />
-          <i />
-          <i />
-        </div>
-        <span>Calcula — ferramentas para o dia a dia</span>
-        <div className="window-controls">
-          <span>−</span>
-          <span>□</span>
-          <span>×</span>
-        </div>
-      </div>
-      <header className="site-header">
+    <div className="desktop w-full" data-theme={theme}>
+      <header className="site-header w-full">
         <Link to="/" className="brand">
           <span className="brand-icon">
             <Calculator size={19} />
@@ -27,6 +31,14 @@ export function Shell() {
             calcula<span className="brand-dot">.</span>
           </span>
         </Link>
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
+          title={theme === 'dark' ? 'Tema claro' : 'Tema escuro'}
+        >
+          {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
+        </button>
         <button
           className="menu-toggle"
           onClick={() => setOpen(!open)}
@@ -55,7 +67,7 @@ export function Shell() {
       <main>
         <Outlet />
       </main>
-      <footer className="footer">
+      <footer className="footer w-full">
         <Link to="/" className="brand">
           <span className="brand-icon">
             <Calculator size={17} />
@@ -67,6 +79,13 @@ export function Shell() {
         <span>Feito para deixar as contas mais simples.</span>
         <span>© 2026 Calcula · Resultados são estimativas</span>
       </footer>
+      {showAd && (
+        <AdCard
+          title="Mais clareza para seus planos"
+          description="Uma demonstração de anúncio contextual no portal Calcula."
+          onClose={() => setShowAd(false)}
+        />
+      )}
     </div>
   )
 }

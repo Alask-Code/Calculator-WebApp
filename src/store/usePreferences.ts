@@ -4,8 +4,10 @@ import type { CalculatorId } from '../lib/calculations'
 type Preferences = {
   favorites: CalculatorId[]
   compact: boolean
+  theme: 'light' | 'dark'
   toggleFavorite: (id: CalculatorId) => void
   toggleCompact: () => void
+  toggleTheme: () => void
   clear: () => void
 }
 export const usePreferences = create<Preferences>()(
@@ -13,6 +15,7 @@ export const usePreferences = create<Preferences>()(
     (set) => ({
       favorites: [],
       compact: false,
+      theme: 'light',
       toggleFavorite: (id) =>
         set((s) => ({
           favorites: s.favorites.includes(id)
@@ -20,6 +23,7 @@ export const usePreferences = create<Preferences>()(
             : [...s.favorites, id],
         })),
       toggleCompact: () => set((s) => ({ compact: !s.compact })),
+      toggleTheme: () => set((s) => ({ theme: s.theme === 'light' ? 'dark' : 'light' })),
       clear: () => set({ favorites: [], compact: false }),
     }),
     { name: 'calcula-preferencias' },
