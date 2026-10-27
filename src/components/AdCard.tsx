@@ -9,7 +9,7 @@ export function AdCard({ onClose }: AdCardProps) {
     <aside className="ad-overlay" aria-label="Anúncio demonstrativo">
       <div className="ad-overlay-top">
         <span>
-          <i /> Anúncio demonstrativo
+          <i /> Anúncios de Terceiros
         </span>
         <button
           className="ad-overlay-close"
@@ -25,7 +25,7 @@ export function AdCard({ onClose }: AdCardProps) {
         src="https://araplhn.org/4/b175bd1f254a44ccae4fc193be9cfe0d"
         title="Conteúdo do anúncio"
       />
-      <p className="ad-overlay-footnote">Prévia ilustrativa · sem conteúdo externo</p>
+      <p className="ad-overlay-footnote">Possível conteudo explicito</p>
     </aside>
   )
 }
