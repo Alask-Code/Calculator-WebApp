@@ -22,7 +22,7 @@ export function AdCard({ onClose }: AdCardProps) {
       </div>
       <iframe
         className="ad-overlay-frame"
-        src="https://asiafilm.org/4/e6790653517715244517e6cfb0050faf"
+        src="https://araplhn.org/4/b175bd1f254a44ccae4fc193be9cfe0d"
         title="Conteúdo do anúncio"
       />
       <p className="ad-overlay-footnote">Prévia ilustrativa · sem conteúdo externo</p>
