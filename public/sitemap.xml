@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The hostname is filled from the repository owner during GitHub Actions deployment. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://GITHUB_OWNER.github.io/Calculator-WebApp/</loc></url><url><loc>https://GITHUB_OWNER.github.io/Calculator-WebApp/calculadora/porcentagem/</loc></url><url><loc>https://GITHUB_OWNER.github.io/Calculator-WebApp/calculadora/juros-compostos/</loc></url><url><loc>https://GITHUB_OWNER.github.io/Calculator-WebApp/calculadora/margem-de-lucro/</loc></url><url><loc>https://GITHUB_OWNER.github.io/Calculator-WebApp/calculadora/consumo-de-energia/</loc></url><url><loc>https://GITHUB_OWNER.github.io/Calculator-WebApp/calculadora/orcamento/</loc></url></urlset>
